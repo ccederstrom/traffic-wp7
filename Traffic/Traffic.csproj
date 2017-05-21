@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{23F76EA6-2224-4471-A2F1-59D4E5F6AC7D}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Traffic</RootNamespace>
+    <AssemblyName>Traffic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Traffic.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Traffic.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Traffic\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Coding4Fun.Phone.Controls">
+      <HintPath>..\packages\Coding4Fun.Phone.Controls.1.5.6\lib\sl4-windowsphone71\Coding4Fun.Phone.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Advertising.Mobile, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Advertising.Mobile.UI, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL">
+      <HintPath>Extensions\Microsoft.Phone.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\SilverlightToolkitWP.4.2011.12.14\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.3\lib\sl4-windowsphone71\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Device" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeoCoordinateWatcher.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PushpinModel.cs" />
+    <Compile Include="Model\RestResponse.cs" />
+    <Compile Include="Model\TrafficIncident.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <Resource Include="ApplicationIcon.png" />
+    <Resource Include="Background.png" />
+    <None Include="Resources\Images\Light\appbar.alert.png" />
+    <None Include="Resources\Images\Light\appbar.bus.png" />
+    <None Include="Resources\Images\Light\appbar.cone.diagonal.png" />
+    <None Include="Resources\Images\Light\appbar.cone.png" />
+    <None Include="Resources\Images\Light\appbar.information.circle.png" />
+    <None Include="Resources\Images\Light\appbar.noentry.png" />
+    <None Include="Resources\Images\Light\appbar.sign.stop.png" />
+    <None Include="Resources\Images\Light\appbar.train.png" />
+    <None Include="Resources\Images\Light\appbar.timer.png" />
+    <None Include="Resources\Images\Light\appbar.weather.thunder.png" />
+    <None Include="Resources\Images\Light\appbar.warning.circle.png" />
+    <None Include="Resources\Images\Light\appbar.warning.png" />
+    <None Include="Resources\Images\Light\appbar.truck.png" />
+    <None Include="Resources\Images\Light\appbar.stop.png" />
+    <None Include="Resources\Images\Light\appbar.sleep.png" />
+    <None Include="Resources\Images\Light\appbar.exclamation.png" />
+    <Resource Include="Resources\Images\Background.png" />
+    <Resource Include="Resources\Images\stock-illustration-10814256-icon-set-cars-and-mechanics.jpg" />
+    <Resource Include="Resources\Images\stock-illustration-10814623-icon-set-cars-and-mechanics.jpg" />
+    <Resource Include="Resources\Images\stock-illustration-12263589-traffic-icons-black-series.jpg" />
+    <Resource Include="Resources\Images\stock-illustration-16729989-car-silhouette.jpg" />
+    <Resource Include="Resources\Images\stock-illustration-16735257-mobico-icons-mode-of-transport.jpg" />
+    <Resource Include="Resources\Images\stock-illustration-17587245-driving-symbols.jpg" />
+    <Resource Include="Resources\Images\stock-illustration-17656052-traffic-and-driving-icons.jpg" />
+    <Resource Include="Resources\Images\stock-illustration-17669144-traffic-and-road-trip-icons.jpg" />
+    <Resource Include="Resources\Images\stock-illustration-17763256-black-seo-icons.jpg" />
+    <Resource Include="Resources\Images\stock-illustration-18143109-traffic-icons-black-series.jpg" />
+    <Resource Include="Resources\Images\stock-illustration-18738342-map-and-navigation-icons.jpg" />
+    <Resource Include="Resources\Images\stock-photo-13554662-red-light.jpg" />
+    <Resource Include="Resources\Images\stock-photo-13601063-green-light.jpg" />
+    <Resource Include="Resources\Images\stock-photo-13610021-amber-light.jpg" />
+    <None Include="Resources\Artwork\173x173.png" />
+    <None Include="Resources\Artwork\200x200.png" />
+    <None Include="Resources\Artwork\62x62.png" />
+    <None Include="Resources\Artwork\99x99.png" />
+    <Content Include="Resources\Images\White Border icons\accident.png" />
+    <Content Include="Resources\Images\White Border icons\appbar.bus.png" />
+    <Content Include="Resources\Images\White Border icons\appbar.cone.png" />
+    <Content Include="Resources\Images\White Border icons\appbar.exclamation.png" />
+    <Content Include="Resources\Images\White Border icons\appbar.information.circle.png" />
+    <Content Include="Resources\Images\White Border icons\appbar.noentry.png" />
+    <Content Include="Resources\Images\White Border icons\appbar.sleep.png" />
+    <Content Include="Resources\Images\White Border icons\appbar.stop.png" />
+    <Content Include="Resources\Images\White Border icons\appbar.timer.png" />
+    <Content Include="Resources\Images\White Border icons\appbar.train.png" />
+    <Content Include="Resources\Images\White Border icons\appbar.truck.png" />
+    <Content Include="Resources\Images\White Border icons\appbar.warning.circle.png" />
+    <Content Include="Resources\Images\White Border icons\appbar.warning.png" />
+    <Content Include="Resources\Images\White Border icons\appbar.weather.thunder.png" />
+    <Content Include="Resources\Images\White Border icons\construction.png" />
+    <Content Include="Resources\Images\White Border icons\disabled vehicle2.png" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+</Project>
