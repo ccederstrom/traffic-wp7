@@ -1,5 +1,5 @@
 # Traffic for Windows Phone 7
-Quickly check the latest highway and road conditions in your area. See real-time traffic maps with detailed incidents.
+A Windows Phone 7 mobile app to quickly check the latest highway and road conditions in your area. See real-time traffic maps with detailed incidents.
 
 ## Traffic feed in area - Portrait view
 ![Translator](https://github.com/ccederstrom/traffic-wp7/blob/master/Traffic/AppHub/b13b112a-3f4c-447e-a535-73b77d0296f5_programView2_63169.png "Translator")
